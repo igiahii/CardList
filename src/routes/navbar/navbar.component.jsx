@@ -1,10 +1,18 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-
+import { Link, NavLink, Outlet } from "react-router-dom";
+import "./navbar.styles.css";
 function Navbar() {
   return (
     <React.Fragment>
-      <h1>Navbar</h1>
+      <div className="navbar">
+        <span className="nav-title">
+          <Link to="/">Card List App</Link>
+        </span>
+        <span className="nav-content">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about-us">About us</NavLink>
+        </span>
+      </div>
       <Outlet />
     </React.Fragment>
   );
