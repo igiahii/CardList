@@ -1,0 +1,25 @@
+.product-container {
+    margin: 3rem auto ;
+    width: 70%;
+    height: 23rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.product-image {
+    height: 100%;
+    width: 40%;
+    object-fit: contain;
+}
+.product-content{
+    padding: 1rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.product-description {
+    font-size: 20px;
+    text-align: justify;
+}
