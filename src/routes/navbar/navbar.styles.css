@@ -38,8 +38,8 @@
     transition: all ease-in .3s;
 }
 .nav-content a:hover {
-    color: rgb(255, 200, 47);
+    color: #42a5f5;
 }
 a.active{
-    color: rgb(255, 200, 47);
+    color: #42a5f5;
 }
