@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CardListContext } from "../../context/cards.context";
 import "./cardList.styles.css";
 import CardItem from "../cardItem/cardItem.component";
+
 function CardList() {
   const { cards } = useContext(CardListContext);
   return (
