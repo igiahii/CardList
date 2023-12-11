@@ -23,7 +23,7 @@ export const CardListProvider = ({ children }) => {
       setCards(data);
       setInitial(data);
     });
-  }, [initial]);
+  }, []);
 
   //post data to firebase
   // const sendDataToDb = () => {
