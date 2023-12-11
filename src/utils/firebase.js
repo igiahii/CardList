@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, onValue } from "firebase/database";
+import { getDatabase, ref, set } from "firebase/database";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBNNiCFkP2ghNbM9CTj8GYEOkV5433X1S8",
   authDomain: "card-list-75c29.firebaseapp.com",
   databaseURL:
@@ -14,14 +14,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const db = getDatabase();
+const db = getDatabase();
 //write data
 export const writeProductData = async (productId, name, imageUrl) => {
-    const reference = ref(db, "product/" + productId);
-    set(reference, {
-        id: productId,
-        name,
-        imageUrl,
-    });
+  const reference = ref(db, "product/" + productId);
+  set(reference, {
+    id: productId,
+    name,
+    imageUrl,
+  });
 };
-

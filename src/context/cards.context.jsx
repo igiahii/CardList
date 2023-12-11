@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 // import DATA from "../data/card-items.json";
-import { db } from "../utils/firebase";
-import { ref, onValue } from "firebase/database";
-
+import { ref, onValue, getDatabase } from "firebase/database";
+import { firebaseConfig } from "../utils/firebase";
+import { initializeApp } from "@firebase/app";
 
 export const CardListContext = createContext({
   cards: [],
@@ -15,13 +15,15 @@ export const CardListProvider = ({ children }) => {
   const [initial, setInitial] = useState([]);
 
   useEffect(() => {
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
     const dataReference = ref(db, "product/");
     onValue(dataReference, (snapshot) => {
       const data = snapshot.val();
       setCards(data);
       setInitial(data);
     });
-  }, []);
+  }, [initial]);
 
   //post data to firebase
   // const sendDataToDb = () => {
